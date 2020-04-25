@@ -8,9 +8,11 @@ namespace Task_1
 {
     internal class HourlyRateEmployee : Employee
     {
-        public override double Salary()
+        internal override double Salary()
         {
             return 20.8 * 8 * salary;
         }
+
+
     }
 }

@@ -8,7 +8,7 @@ namespace Task_1
 {
     internal class FixRateEmployee : Employee
     {
-        public override double Salary() 
+        internal override double Salary() 
         {
             return salary;
         }

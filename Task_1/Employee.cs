@@ -5,13 +5,21 @@ using System.Threading.Tasks;
 
 namespace Task_1
 {
-    abstract class Employee
+    abstract class Employee : IComparable
     {
         internal string firstName { get; set; }
         internal string lastName { get; set; }
         internal double salary { get; set; }
 
-        public abstract double Salary();
+        internal abstract double Salary();
+
+        public int CompareTo(object worker)
+        {
+            Employee employee;
+            employee = (Employee)worker;
+
+            return salary.CompareTo(employee.salary);
+        }
     }
 
     class DataBase
@@ -39,8 +47,9 @@ namespace Task_1
 
                 employee.Add(worker);
             }
-
             sr.Close();
+
+            employee.Sort();
             return employee.ToArray();
         }
 
@@ -67,14 +76,21 @@ namespace Task_1
 
                 employee.Add(worker);
             }
-
             sr.Close();
+
+            employee.Sort();
             return employee.ToArray();
         }
 
         internal void Show(Employee[] employee) 
         {
             for(int i = 0; i < employee.Length; i++)
+                Console.WriteLine($"{employee[i].lastName} {employee[i].firstName} {employee[i].Salary()}");
+        }
+
+        internal void Show2(List<HourlyRateEmployee> employee)
+        {
+            for (int i = 0; i < employee.Count; i++)
                 Console.WriteLine($"{employee[i].lastName} {employee[i].firstName} {employee[i].Salary()}");
         }
 
@@ -86,6 +102,7 @@ namespace Task_1
 
             dataBase.Show(workersFix);
             dataBase.Show(workersHourly);
+
             Console.WriteLine($"{workersHourly[9].Salary()}");
         }
     }
