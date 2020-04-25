@@ -16,7 +16,7 @@ namespace Task_1
 
     class DataBase
     {
-        internal Employee[] InitializeEmployeeFix(string path = @"..\..\EmployeeFix.csv")
+        internal FixRateEmployee[] InitializeEmployeeFix(string path = @"..\..\EmployeeFix.csv")
         {
             if (!File.Exists(path))
             {
@@ -44,7 +44,7 @@ namespace Task_1
             return employee.ToArray();
         }
 
-        internal Employee[] InitializeEmployeeHourly(string path = @"..\..\EmployeeHourly.csv")
+        internal HourlyRateEmployee[] InitializeEmployeeHourly(string path = @"..\..\EmployeeHourly.csv")
         {
             if (!File.Exists(path))
             {
@@ -75,14 +75,14 @@ namespace Task_1
         internal void Show(Employee[] employee) 
         {
             for(int i = 0; i < employee.Length; i++)
-                Console.WriteLine($"{employee[i].lastName} {employee[i].firstName} {employee[i].salary}");
+                Console.WriteLine($"{employee[i].lastName} {employee[i].firstName} {employee[i].Salary()}");
         }
 
         static void Main(string[] args)
         {
             DataBase dataBase = new DataBase();
-            Employee[] workersFix = dataBase.InitializeEmployeeFix();
-            Employee[] workersHourly = dataBase.InitializeEmployeeHourly();
+            FixRateEmployee[] workersFix = dataBase.InitializeEmployeeFix();
+            HourlyRateEmployee[] workersHourly = dataBase.InitializeEmployeeHourly();
 
             dataBase.Show(workersFix);
             dataBase.Show(workersHourly);
