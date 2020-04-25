@@ -54,7 +54,7 @@ namespace Task_1
             DataBase dataBase = new DataBase();
             Employee[] workers = dataBase.InitializeEmployeeBase();
 
-            dataBase.Show(workers);
+            dataBase.Show(workers); 
         }
     }
 }
