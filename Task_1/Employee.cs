@@ -88,12 +88,6 @@ namespace Task_1
                 Console.WriteLine($"{employee[i].lastName} {employee[i].firstName} {employee[i].Salary()}");
         }
 
-        internal void Show2(List<HourlyRateEmployee> employee)
-        {
-            for (int i = 0; i < employee.Count; i++)
-                Console.WriteLine($"{employee[i].lastName} {employee[i].firstName} {employee[i].Salary()}");
-        }
-
         static void Main(string[] args)
         {
             DataBase dataBase = new DataBase();
@@ -102,8 +96,6 @@ namespace Task_1
 
             dataBase.Show(workersFix);
             dataBase.Show(workersHourly);
-
-            Console.WriteLine($"{workersHourly[9].Salary()}");
         }
     }
 }
