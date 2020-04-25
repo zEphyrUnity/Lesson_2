@@ -10,7 +10,7 @@ namespace Task_1
     {
         public override double Salary()
         {
-            return salary;
+            return 20.8 * 8 * salary;
         }
     }
 }
