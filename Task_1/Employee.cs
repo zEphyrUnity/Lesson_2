@@ -1,17 +1,23 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections;
 using System.Threading.Tasks;
 
 namespace Task_1
 {
-    abstract class Employee : IComparable
+    abstract class Employee : IComparable, IEnumerable
     {
         internal string firstName { get; set; }
         internal string lastName { get; set; }
         internal double salary { get; set; }
 
         internal abstract double Salary();
+
+        public IEnumerator GetEnumerator()
+        {
+            return GetEnumerator() ;
+        }
 
         public int CompareTo(object worker)
         {
@@ -96,6 +102,11 @@ namespace Task_1
 
             dataBase.Show(workersFix);
             dataBase.Show(workersHourly);
+         
+            foreach(HourlyRateEmployee item in workersHourly)
+            {
+                Console.WriteLine($"{item.firstName}");
+            }
         }
     }
 }
