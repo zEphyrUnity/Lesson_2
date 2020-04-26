@@ -87,10 +87,15 @@ namespace Task_1
             return employee.ToArray();
         }
 
-        internal void Show(Employee[] employee) 
+        internal void Show(FixRateEmployee[] employee)
         {
-            for(int i = 0; i < employee.Length; i++)
-                Console.WriteLine($"{employee[i].lastName} {employee[i].firstName} {employee[i].Salary()}");
+            foreach (FixRateEmployee item in employee)
+                Console.WriteLine($"{item.lastName} {item.firstName} {item.Salary()}");
+        }
+        internal void Show(HourlyRateEmployee[] employee)
+        {
+            foreach (HourlyRateEmployee item in employee)
+                Console.WriteLine($"{item.lastName} {item.firstName} {item.Salary()}");
         }
 
         static void Main(string[] args)
@@ -101,11 +106,6 @@ namespace Task_1
 
             dataBase.Show(workersFix);
             dataBase.Show(workersHourly);
-         
-            foreach(HourlyRateEmployee item in workersHourly)
-            {
-                Console.WriteLine($"{item.firstName}");
-            }
         }
     }
 }
