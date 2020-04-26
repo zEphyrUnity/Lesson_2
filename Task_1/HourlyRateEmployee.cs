@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task_1
+﻿namespace Task_1
 {
     internal class HourlyRateEmployee : Employee
     {
@@ -12,7 +6,5 @@ namespace Task_1
         {
             return 20.8 * 8 * salary;
         }
-
-
     }
 }
